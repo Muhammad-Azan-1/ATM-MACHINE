@@ -17,7 +17,12 @@ while (true) {
 
     if (checkMyPin.pin == mypin) {
         console.log("correct pin");
+        break;
+    } else if (checkMyPin.pin !== mypin) {
+        console.log("Incorrect pin please try again");
+    }
 
+    }
         // asking user what he wants to do
         let answer = await inquirer.prompt([
             {
@@ -102,11 +107,8 @@ while (true) {
         else if (answer.option === "check balance") {
             console.log(`Your balance is ${myBalance}rs`);
         }
-        break;
-    } else if (checkMyPin.pin !== mypin) {
-        console.log("Incorrect pin please try again");
-    }
-}
+   
+
 
 
 
