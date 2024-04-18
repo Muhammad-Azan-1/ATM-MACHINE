@@ -1,6 +1,13 @@
 #!/usr/bin/env node
 
 import inquirer from "inquirer";
+import chalk from "chalk";
+
+console.log(`Enter any of the following pin.
+
+1) 1111                               
+2) 2221
+3) 0000 \n `);
 
 let myBalance = 20000;
 let mypin = 2221;
@@ -16,10 +23,10 @@ while (true) {
     ]);
 
     if (checkMyPin.pin == mypin) {
-        console.log("correct pin");
+        console.log(chalk.bgGreen("\ncorrect pin\n"));
         break;
     } else if (checkMyPin.pin !== mypin) {
-        console.log("Incorrect pin please try again");
+        console.log(chalk.bgRed("\nIncorrect pin please try again\n"));
     }
 
     }
@@ -46,12 +53,12 @@ while (true) {
             // checking if user enters amount within the limit or not
             while (true) {
                 if (cash.amount <= myBalance) {
-                    console.log(`\nYou have successfully withdrawn ${cash.amount}rs\n`);
+                    console.log(chalk.bold(`\nYou have successfully withdrawn = ${chalk.bgGreenBright(cash.amount,"Rs")}\n`));
                     myBalance -= cash.amount;
-                    console.log(`Now your current balance is ${myBalance}rs`);
+                    console.log(chalk.bold(`Now your current balance is ${myBalance}rs`));
                     break;
                 } else if (cash.amount > myBalance) {
-                    console.log(`Please Apni hesiyat main reh kr amount nikale`);
+                    console.log(chalk.bold(`Please Apni hesiyat main reh kr amount nikale`));
                     cash = await inquirer.prompt([
                         {
                             message: "Please enter the cash you want to withdraw: ",
@@ -79,33 +86,33 @@ while (true) {
       ]);
 
         if(fastCash.cashtype === "500"){
-        console.log(`\nYou have succssesfully withdrawn ${ 500}rs\n`)
+        console.log(chalk.bold(`\nYou have succssesfully withdrawn ${chalk.bgGreen(500,"Rs")}\n`))
         myBalance -= 500
-        console.log(`Your current balance is ${myBalance}`)
+        console.log(chalk.bold(`Your current balance is ${chalk.bgGreen(myBalance,"Rs")}`))
 
         }
         else if(fastCash.cashtype === "1000"){
-            console.log(`\nYou have succssesfully withdrawn ${1000}rs\n`)
+            console.log(chalk.bold(`\nYou have succssesfully withdrawn ${chalk.bgGreen(1000,"Rs")}\n`))
             myBalance -= 1000
-            console.log(`Your current balance is ${myBalance}`)
+            console.log(chalk.bold(`Your current balance is ${chalk.bgGreen(myBalance,"Rs")}`))
 
         }
         else if (fastCash.cashtype === "3000"){
-            console.log(`\nYou have succssesfully withdrawn ${ 3000}rs\n`)
+            console.log(chalk.bold(`\nYou have succssesfully withdrawn ${chalk.bgGreen(3000,"Rs")}\n`))
             myBalance -= 3000
-            console.log(`Your current balance is ${myBalance}`)
+            console.log(chalk.bold(`Your current balance is ${chalk.bgGreen(myBalance,"Rs")}`))
 
         }
         else if(fastCash.cashtype === "5000"){
-            console.log(`\nYou have succssesfully withdrawn ${ 5000}rs\n`)
+            console.log(chalk.bold(`\nYou have succssesfully withdrawn ${chalk.bgGreen(5000,"Rs")}\n`))
             myBalance -= 5000
-            console.log(`Your current balance is ${myBalance}`)
+            console.log(chalk.bold(`Your current balance is ${chalk.bgGreen(myBalance,"Rs")}`))
         }
 
         }
         //opt5
         else if (answer.option === "check balance") {
-            console.log(`Your balance is ${myBalance}rs`);
+            console.log(chalk.bold(`Your balance is ${chalk.bgGreen(myBalance,"Rs")}`));
         }
    
 

@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 import inquirer from "inquirer";
+import chalk from "chalk";
+console.log(`Enter any of the following pin.
+
+1) 1111                               
+2) 2221
+3) 0000 \n `);
 let myBalance = 20000;
 let mypin = 2221;
 // checking if user enters a correct pin
@@ -12,11 +18,11 @@ while (true) {
         },
     ]);
     if (checkMyPin.pin == mypin) {
-        console.log("correct pin");
+        console.log(chalk.bgGreen("\ncorrect pin\n"));
         break;
     }
     else if (checkMyPin.pin !== mypin) {
-        console.log("Incorrect pin please try again");
+        console.log(chalk.bgRed("\nIncorrect pin please try again\n"));
     }
 }
 // asking user what he wants to do
@@ -40,9 +46,9 @@ if (answer.option === "cash withdraw") {
     // checking if user enters amount within the limit or not
     while (true) {
         if (cash.amount <= myBalance) {
-            console.log(`\nYou have successfully withdrawn ${cash.amount}rs\n`);
+            console.log(chalk.bold(`\nYou have successfully withdrawn = ${chalk.bgGreenBright(cash.amount, "Rs")}\n`));
             myBalance -= cash.amount;
-            console.log(`Now your current balance is ${myBalance}rs`);
+            console.log(chalk.bold(`Now your current balance is ${myBalance}rs`));
             break;
         }
         else if (cash.amount > myBalance) {
