@@ -1,6 +1,6 @@
 {
   "name": "azan-14-atm-machine",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Here we are creating a ATM machine using node.js and typescript",
   "main": "main.js",
   "type": "module",
