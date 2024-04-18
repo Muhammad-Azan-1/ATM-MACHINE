@@ -55,7 +55,7 @@ while (true) {
                 if (cash.amount <= myBalance) {
                     console.log(chalk.bold(`\nYou have successfully withdrawn = ${chalk.bgGreenBright(cash.amount,"Rs")}\n`));
                     myBalance -= cash.amount;
-                    console.log(chalk.bold(`Now your current balance is ${myBalance}rs`));
+                    console.log(chalk.bold(`Now your current balance is = ${chalk.bgBlueBright(myBalance,"Rs")}`));
                     break;
                 } else if (cash.amount > myBalance) {
                     console.log(chalk.bold(`Please Apni hesiyat main reh kr amount nikale`));
@@ -86,33 +86,33 @@ while (true) {
       ]);
 
         if(fastCash.cashtype === "500"){
-        console.log(chalk.bold(`\nYou have succssesfully withdrawn ${chalk.bgGreen(500,"Rs")}\n`))
+        console.log(chalk.bold(`\nYou have succssesfully withdrawn = ${chalk.bgGreen(500,"Rs")}\n`))
         myBalance -= 500
-        console.log(chalk.bold(`Your current balance is ${chalk.bgGreen(myBalance,"Rs")}`))
+        console.log(chalk.bold(`Your current balance is = ${chalk.bgBlueBright(myBalance,"Rs")}`))
 
         }
         else if(fastCash.cashtype === "1000"){
-            console.log(chalk.bold(`\nYou have succssesfully withdrawn ${chalk.bgGreen(1000,"Rs")}\n`))
+            console.log(chalk.bold(`\nYou have succssesfully withdrawn = ${chalk.bgGreen(1000,"Rs")}\n`))
             myBalance -= 1000
-            console.log(chalk.bold(`Your current balance is ${chalk.bgGreen(myBalance,"Rs")}`))
+            console.log(chalk.bold(`Your current balance is = ${chalk.bgBlueBright(myBalance,"Rs")}`))
 
         }
         else if (fastCash.cashtype === "3000"){
-            console.log(chalk.bold(`\nYou have succssesfully withdrawn ${chalk.bgGreen(3000,"Rs")}\n`))
+            console.log(chalk.bold(`\nYou have succssesfully withdrawn = ${chalk.bgGreen(3000,"Rs")}\n`))
             myBalance -= 3000
-            console.log(chalk.bold(`Your current balance is ${chalk.bgGreen(myBalance,"Rs")}`))
+            console.log(chalk.bold(`Your current balance is = ${chalk.bgBlueBright(myBalance,"Rs")}`))
 
         }
         else if(fastCash.cashtype === "5000"){
-            console.log(chalk.bold(`\nYou have succssesfully withdrawn ${chalk.bgGreen(5000,"Rs")}\n`))
+            console.log(chalk.bold(`\nYou have succssesfully withdrawn = ${chalk.bgGreen(5000,"Rs")}\n`))
             myBalance -= 5000
-            console.log(chalk.bold(`Your current balance is ${chalk.bgGreen(myBalance,"Rs")}`))
+            console.log(chalk.bold(`Your current balance is = ${chalk.bgBlueBright(myBalance,"Rs")}`))
         }
 
         }
         //opt5
         else if (answer.option === "check balance") {
-            console.log(chalk.bold(`Your balance is ${chalk.bgGreen(myBalance,"Rs")}`));
+            console.log(chalk.bold(`Your balance is = ${chalk.bgBlueBright(myBalance,"Rs")}`));
         }
    
 
